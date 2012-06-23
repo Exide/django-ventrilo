@@ -1,0 +1,22 @@
+Name: django-ventrilo
+Author: Ryan Zander 2010
+
+1. Install
+
+These instructions are very basic and do not take into consideration custom configurations.
+
+1.1. Edit "<your_project>/settings.py" and add the following:
+
+     sys.path.insert(0, '/path/to/django-ventrilo')
+     INSTALLED_APPS.append('ventrilo')
+
+1.2. Synchronize the database to add django-ventrilo tables (e.g. manage.py syncdb)
+
+1.3. Login to the admin client and configure the ventrilo options.
+
+1.4. Update the Ventrilo server information (e.g. manage.py update_ventrilo).
+
+     Execute this command regularly (e.g. cron) to synchronize information
+     between the Ventrilo server and your database.
+
+1.5. Access the data at: http://example.tld/ventrilo
