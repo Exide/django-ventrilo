@@ -1,0 +1,19 @@
+<div class="header">
+    <div class="title">Ventrilo Status</div>
+    <div class="address">
+        <a href="ventrilo://{{ server.host }}:{{ server.port }}/servername={{ server.name|urlencode }}">
+            {{ server.host }}:{{ server.port }}
+        </a>
+    </div>
+    <div class="updated">last updated {{ server.updated|timesince }} ago</div>
+</div>
+
+{% for channel in server.sorted_channels %}
+    <div class="channel_name">{{ channel.name }}</div>
+    {% for client in channel.client_set.all %}
+        <div class="client">
+            <span class="name">{{ client.name }}</span>
+            <span class="comment">{{ client.comment|urlizetrunc:16 }}</span>
+        </div>
+    {% endfor %}
+{% endfor %}
