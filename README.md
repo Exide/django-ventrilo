@@ -1,9 +1,13 @@
 # django-ventrilo
 Django application for Ventrilo integration.
 
-## Quickstart
+## Caveats
 
-_This was written to work with Django 1.4 and Python 2.7_
+- The program ```ventrilo_status``` (included with [Ventrilo Server](http://www.ventrilo.com/download.php)) is in the same directory.
+- This was written in Python 2.7
+- This was intended to work with Django 1.4
+
+## Quickstart
 
 ### Add this app to your Django ```settings.py```
 
@@ -24,8 +28,8 @@ _This was written to work with Django 1.4 and Python 2.7_
 
 ### Login to the admin client and configure the ventrilo options.
 
-- Login to the admin client (e.g. http://your-site/admin/)
-- Browse to _Ventrilo_ -> _Server_
+- Login to the admin client (e.g. ```http://your-site/admin/```)
+- Browse to _Ventrilo_ > _Server_
 - Click the _Add_ button
 - Enter the values for your Ventrilo server
 
@@ -43,4 +47,4 @@ Here is a simple [Cron](https://en.wikipedia.org/wiki/Cron) entry that updates e
 
 ### Verify everything works
 
-- Browse to: http://your-site/ventrilo
+To make sure all of the pieces are functioning properly you should be able to view the current status at: ```http://your-site/ventrilo```
