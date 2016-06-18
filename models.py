@@ -1,5 +1,5 @@
 from django.db.models import Model, BooleanField, ForeignKey, CharField, IntegerField, DateTimeField
-from django.contrib.auth.models import User
+
 
 class Server(Model):
     updated = DateTimeField(auto_now=True)
@@ -9,12 +9,13 @@ class Server(Model):
     app = CharField(max_length=256)
     name = CharField(max_length=64)
     comment = CharField(max_length=64)
-    
+
     def sorted_channels(self):
         return self.channel_set.order_by('cid')
-    
+
     def __unicode__(self):
         return self.name
+
 
 class Channel(Model):
     cid = IntegerField()
@@ -25,6 +26,7 @@ class Channel(Model):
     def __unicode__(self):
         return self.name
 
+
 class Client(Model):
     admin = BooleanField()
     name = CharField(max_length=64)
@@ -33,6 +35,7 @@ class Client(Model):
 
     def __unicode__(self):
         return self.name
+
 
 def encode(obj):
     if isinstance(obj, Server):
